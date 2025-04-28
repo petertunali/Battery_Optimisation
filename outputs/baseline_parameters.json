@@ -1,0 +1,14 @@
+{
+    "system_capacity": 10,
+    "dc_ac_ratio": 1.2,
+    "inv_eff": 96,
+    "losses": 51,
+    "tilt": 10,
+    "azimuth": 18,
+    "module_type": 0,
+    "array_type": 0,
+    "monthly_shading": "Applied as system loss",
+    "output_column": "PV_Generation_Actual (kWh)",
+    "export_limit": null,
+    "leap_year": true
+}

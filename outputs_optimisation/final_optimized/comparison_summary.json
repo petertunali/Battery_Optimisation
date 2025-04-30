@@ -1,0 +1,32 @@
+{
+    "avg_daily_diff_pct": 88.96486683517769,
+    "avg_daily_measured_kwh": 21.922629000000004,
+    "avg_daily_simulated_kwh": 41.426066696620055,
+    "total_measured_kwh": 4165.29951,
+    "total_simulated_kwh": 7870.95267235781,
+    "total_diff_pct": 88.96486683517773,
+    "num_points_compared": 9026,
+    "system_params": {
+        "system_capacity": 10.0,
+        "dc_ac_ratio": 1.15,
+        "inv_eff": 96.0,
+        "tilt": 10.0,
+        "azimuth": 18.0,
+        "module_type": 0.0,
+        "array_type": 1.0,
+        "gcr": 0.3,
+        "detailed_losses": {
+            "soiling": 2.0,
+            "shading": 10.0,
+            "snow": 0.0,
+            "mismatch": 2.0,
+            "wiring": 2.0,
+            "connections": 0.5,
+            "lid": 1.5,
+            "nameplate": 1.0,
+            "age": 0.0,
+            "availability": 3.0
+        },
+        "calculated_total_losses": 20.27638620560621
+    }
+}

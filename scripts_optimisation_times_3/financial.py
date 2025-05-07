@@ -6,7 +6,7 @@ def compute_financials(
     battery_kwh: float,
     pv_kw: float,
     pv_cost_per_kw: float = 1000.0,
-    battery_cost_per_kwh: float = 150.0,
+    battery_cost_per_kwh: float = 800.0,
     feed_in_tariff: float = 0.033,
     import_price_peak: float = 0.39710,
     import_price_offpeak: float = 0.13530,
@@ -21,6 +21,9 @@ def compute_financials(
     capex_pv    = pv_kw * pv_cost_per_kw
     capex_batt  = battery_kwh * battery_cost_per_kwh
     capex_total = capex_pv + capex_batt
+
+        # subtract sunk cost of existing 10 kW PV system:
+    capex_total -= 10_000.0
 
     export_rev   = totals['total_pv_export'] * feed_in_tariff
     import_cost  = (

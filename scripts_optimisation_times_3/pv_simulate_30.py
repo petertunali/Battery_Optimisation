@@ -27,14 +27,15 @@ def simulate_pv_simple(
     start_year: int = 2024,
 ) -> pd.DataFrame:
     """
-    Run a PVWatts simulation and return half-hourly energy (kWh) for one year.
-    Each hourly kWh output is evenly split into two 30-minute intervals.
+    Run a PVWatts simulation and return one year of half-hourly kWh.
+    Each hourly output is evenly split into two 30‑min intervals.
     """
-    total_loss = (
-        soiling + shading + snow + mismatch + wiring +
-        connections + lid + nameplate + age + availability
-    )
+    # sum all loss components
+    total_loss = (soiling + shading + snow + mismatch
+                  + wiring + connections + lid
+                  + nameplate + age + availability)
 
+    # configure & run PVWatts
     model = pv.default('PVWattsNone')
     model.SolarResource.solar_resource_file = str(weather_file)
     sd = model.SystemDesign
@@ -49,18 +50,25 @@ def simulate_pv_simple(
     sd.losses          = total_loss
     model.execute()
 
+    # get hourly output in kWh
     ac_kwh = np.array(model.Outputs.ac) / 1000.0
 
+    # build an hourly index for that start_year
     idx_hour = pd.date_range(
         datetime(start_year, 1, 1),
         periods=len(ac_kwh),
-        freq='h'
+        freq='h'           # lowercase 'h' to avoid warnings
     )
-    idx_half = pd.date_range(idx_hour[0], periods=len(ac_kwh)*2, freq='30min')
-    half_kwh = np.repeat(ac_kwh / 2, 2)
 
-    df_half = pd.DataFrame({'simulated_kwh': half_kwh}, index=idx_half)
-    return df_half[df_half.index.year == start_year]
+    # split each hourly kWh into two half‑hours
+    half_index = pd.date_range(idx_hour[0],
+                                periods=len(ac_kwh)*2,
+                                freq='30min')
+    half_kwh   = np.repeat(ac_kwh/2, 2)
+
+    df = pd.DataFrame({'simulated_kwh': half_kwh}, index=half_index)
+    return df[df.index.year == start_year]
+
 
 def simulate_total_pv(
     weather_file: str,
@@ -68,8 +76,8 @@ def simulate_total_pv(
     start_year: int = 2024
 ) -> (pd.DataFrame, dict):
     """
-    Simulate multiple PV arrays (roofs) for one representative year.
-    Returns the summed half-hourly output plus each roof’s own DataFrame.
+    Simulate each roof in roof_params for one year, then sum them.
+    Returns (total_df, dict of individual roof dfs).
     """
     total_df = None
     roof_outputs = {}
@@ -77,10 +85,10 @@ def simulate_total_pv(
     for params in roof_params:
         name = params.get('name', f"roof_{len(roof_outputs)+1}")
         df = simulate_pv_simple(
-            weather_file,
-            system_capacity_kw=params.get('system_capacity_kw', 0),
-            tilt=params.get('tilt', 0),
-            azimuth=params.get('azimuth', 180),
+            weather_file=weather_file,
+            system_capacity_kw=params['system_capacity_kw'],
+            tilt=params['tilt'],
+            azimuth=params['azimuth'],
             soiling=params.get('soiling', 2.0),
             shading=params.get('shading', 0.0),
             snow=params.get('snow', 0.0),
@@ -106,35 +114,46 @@ def simulate_total_pv(
 
     return total_df, roof_outputs
 
+
 def simulate_multi_year_pv(
     weather_files: list,
     roof_params: list,
-    repeats_per_file: int = 1,   # ← now default=1 → simulate exactly one year per file
+    repeats_per_file: int = 10,
     start_years: list = None
 ) -> pd.DataFrame:
     """
-    Simulate each weather_file once (3 years total if you pass 3 files),
-    returning a 3-year half-hourly DataFrame of length 3×17 520 = 52 560.
+    Build a full 30‑year half-hourly PV profile by:
+      1) simulating each weather_file once,
+      2) repeating that one‑year output `repeats_per_file` times,
+      3) concatenating all segments,
+      4) stamping a continuous 30‑min index from the first start_year.
     """
-    from pathlib import Path
-
+    # infer start_years from filenames if not provided (take first 4 digits)
     if start_years is None:
         start_years = [
-            int(''.join(filter(str.isdigit, Path(wf).stem)))
+            int(''.join(filter(str.isdigit, Path(wf).stem))[:4])
             for wf in weather_files
         ]
 
     segments = []
     for wf, sy in zip(weather_files, start_years):
-        total_df, _ = simulate_total_pv(wf, roof_params, start_year=sy)
+        one_year_df, _ = simulate_total_pv(wf, roof_params, start_year=sy)
+        # repeat that year `repeats_per_file` times (default=10)
         for _ in range(repeats_per_file):
-            segments.append(total_df.copy())
+            segments.append(one_year_df.copy())
 
     full = pd.concat(segments, ignore_index=True)
 
-    # build a continuous half-hour datetime index
-    start = datetime(start_years[0], 1, 1)
-    full.index = pd.date_range(start, periods=len(full), freq='30min')
+    # build a continuous datetime index
+    idx = pd.date_range(
+        datetime(start_years[0], 1, 1),
+        periods=len(full),
+        freq='30min'
+    )
+    full.index = idx
 
-    assert len(full) == len(weather_files) * repeats_per_file * 17520
+    # sanity check: 3 files × 10 repeats × 17,520 half‑hours = 525,600
+    expected = len(weather_files) * repeats_per_file * 17520
+    assert len(full) == expected, f"expected {expected} intervals, got {len(full)}"
+
     return full

@@ -1,0 +1,11 @@
+,value
+total_demand,1316358.47087
+total_pv_used,165267.8127682762
+total_battery_discharge,1.1353213021836505e-11
+total_grid_import_peak,355304.31192751107
+total_grid_import_offpeak,795786.3461742124
+total_pv_export,38602.797718778544
+total_grid_emissions,1012959.7791295167
+renewable_fraction,0.12554924545670934
+grid_fraction,0.8744507545432904
+self_consumption_rate,0.8106505021662761

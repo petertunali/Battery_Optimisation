@@ -1,0 +1,6 @@
+Parameter,Value,Units,Description
+Optimal Battery Size,2.1267060186385106e-15,kWh,Optimal battery size (0 = no battery is optimal)
+PV Size,10.0,kW,Fixed PV system capacity
+IRR,,fraction,Internal Rate of Return (may be undefined)
+NPV,11866.107675280286,$,Net Present Cost
+Renewable Fraction,0.12554924545670934,fraction,Fraction of demand met by renewable sources

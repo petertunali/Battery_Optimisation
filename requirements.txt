@@ -1,17 +1,17 @@
-# Core modeling libraries
-NREL-PySAM
-pandas
-numpy
-matplotlib
+# Python currently utilised is Python 3.10
 
-# Excel file reading
-openpyxl
+# Packages to download
+numpy          # Numerical arrays & math routines
+pandas         # Data manipulation & analysis
+pymoo          # Multi‐objective optimization (NSGA‑II, etc.)
+numpy‑financial  # Financial functions (IRR, NPV, etc.)
+nrel‑pysam       # PV & battery system modelling (PySAM)
+openpyxl       # Excel I/O support for pandas
+scipy          # Scientific computing routines
+matplotlib     # 2D plotting library
+seaborn        # High‑level statistical plotting API
+tqdm           # Progress bars in loops
 
-# Advanced numerical methods (for optimization later)
-scipy
+# To install on personal machine
 
-# Better data visualisation
-seaborn
-
-# Progress bars for loops
-tqdm
+pip install numpy pandas pymoo numpy‑financial nrel‑pysam openpyxl scipy matplotlib seaborn tqdm

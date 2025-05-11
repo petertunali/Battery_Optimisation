@@ -1,0 +1,10 @@
+Variable,Description,Units
+pv_gen,PV generation in kWh for each half-hour,kWh
+demand,Electricity demand in kWh for each half-hour,kWh
+pv_used,PV generation used directly to satisfy demand,kWh
+battery_charge,Energy used to charge the battery,kWh
+battery_discharge,Energy discharged from the battery,kWh
+battery_soc,Battery state of charge,kWh
+pv_export,Excess PV generation exported to the grid,kWh
+grid_import_peak,Electricity imported during peak hours,kWh
+grid_import_offpeak,Electricity imported during off-peak hours,kWh

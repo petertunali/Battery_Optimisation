@@ -1,0 +1,27 @@
+Best Solution Details:
+PV Size: 11.0 kW
+Battery Size: 0.0 kWh
+IRR: 10.64%
+Net Present Cost: $-37672.90
+
+Simulation Parameters:
+PV Cost: $1000/kW + $5000 installation
+Battery Cost: $1000/kWh + $174/kWh installation
+PV Maintenance: $0.15/day
+Battery Maintenance: $0.30/day/kWh
+Discount Rate: 7%
+Battery Degradation: 1%/year
+Battery Depth of Discharge: 20%
+Battery Round Trip Efficiency: 90%
+Battery C-Rate: 0.5C
+Grid Emission Rate: 0.88 kg CO2e/kWh
+
+Energy Summary:
+Total Demand: 1318609.49 kWh
+Total PV Used Directly: 312579.36 kWh
+Total Battery Discharge: 0.00 kWh
+Total Grid Import (Peak): 309828.75 kWh
+Total Grid Import (Off-Peak): 696201.38 kWh
+Total PV Export: 160092.64 kWh
+Renewable Fraction: 23.71%
+Self-Consumption Rate: 66.13%

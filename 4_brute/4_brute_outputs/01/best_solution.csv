@@ -1,2 +1,0 @@
-pv_kw,battery_kwh,IRR,NPC,NPV,pv_cost_per_kw,battery_cost_per_kwh,capex_total,opex_total,export_revenue,import_cost,payback_years,annual_savings,total_savings,pv_battery_savings,battery_total_cycles,battery_degradation_pct,renewable_fraction
-12.0,0.0,0.1099095943531303,-42280.863796523685,42280.863796523685,1022.4640238294584,0.0,17269.5682859535,17082.0,6103.283016129644,212701.42266856544,8.699971275792858,1985.0144027492397,76632.43208247719,76632.43208247719,0.0,0.0,0.25121896243653924

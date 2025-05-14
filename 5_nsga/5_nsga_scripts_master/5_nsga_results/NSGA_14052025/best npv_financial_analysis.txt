@@ -1,0 +1,68 @@
+===============================================
+Best NPV SOLUTION FINANCIAL ANALYSIS
+===============================================
+
+SYSTEM CONFIGURATION
+-------------------
+Existing PV Capacity: 10.00 kW
+Additional PV Capacity: 46.49 kW
+Total System PV Capacity: 56.49 kW
+Battery Size: 16.54 kWh
+Battery Power: 8.27 kW (0.5C rate)
+
+PV ALLOCATION
+------------
+Existing System: 10.00 kW
+accommodation_block: 33.00 kW
+  Tilt: 20.0°, Azimuth: 40.0°, Shading: 0.0%
+small_shed: 10.00 kW
+  Tilt: 20.0°, Azimuth: 20.0°, Shading: 20.0%
+ground_mounted: 3.49 kW
+  Tilt: 30.0°, Azimuth: 5.0°, Shading: 0.0%
+
+FINANCIAL RESULTS
+-----------------
+PV Capital Cost: $46,975.82
+Battery Capital Cost: $18,009.34
+Total Capital Cost: $64,985.16
+Annual PV Maintenance: $250.00 (with 3.0% annual inflation)
+IRR: 11.66%
+NPV: $40,160.86
+Simple Payback: 10.52 years
+Levelized Cost of Energy (LCOE): $0.03405/kWh
+
+ENERGY RESULTS (30 YEARS)
+-----------------------
+Total Generation: 2,033,707.00 kWh
+Total Demand: 1,316,358.47 kWh
+PV Self-Consumed: 648,676.02 kWh
+Battery Discharge: 121,237.34 kWh
+Grid Import: 551,093.90 kWh
+PV Export: 1,253,406.57 kWh
+Renewable Fraction: 58.49%
+Self-Consumption Rate: 34.10%
+Grid Emissions: 435,364.18 kg CO2e
+
+BATTERY PERFORMANCE
+------------------
+Cycles Over 30 Years: 8,145.35
+Final Capacity Degradation: 25.28%
+
+INCREMENTAL ANALYSIS VS. PV-ONLY
+------------------------------
+Current Annual Cost (PV-only): $8,246.44
+First Year Annual Cost (Proposed): $2,071.71
+First Year Savings: $6,174.73
+Total 30-Year Savings (undiscounted): $293,765.39
+
+NOTES
+-----
+- Incremental analysis compares against existing PV-only baseline
+- Electricity prices escalate at 3% per year
+- Initial electricity rates: Peak = $0.39710/kWh, Off-peak = $0.13530/kWh, Export = $0.03300/kWh
+- PV cost calculated using formula: y = 1047.3 * e^(-0.002*x) with minimum $750/kW
+- Ground-mounted PV has 20% cost premium
+- Battery cost calculated using formula: y = 977.54 * e^(-0.004*x) with minimum $600/kWh
+- No battery maintenance costs as per requirements
+- PV maintenance cost: $250.00 per year with 3.0% annual inflation
+- Discount rate for NPV calculation: 7%

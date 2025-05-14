@@ -1,0 +1,15 @@
+Metric,Best IRR Solution,Best NPV Solution
+Battery Size (kWh),0.48,16.54
+Additional PV (kW),14.44,46.49
+Total PV Capacity (kW),24.44,56.49
+Total Capital Cost ($),"$15,252.42","$64,985.16"
+IRR (%),15.85%,11.66%
+NPV ($),"$19,129.60","$40,160.86"
+PI,1.25,0.62
+LCOE ($/kWh),$0.02445,$0.03405
+Simple Payback (years),7.55,10.52
+First Year Savings ($/year),"$2,019.09","$6,174.73"
+Total 30-Year Savings ($),"$96,059.26","$293,765.39"
+Renewable Fraction (%),33.41%,58.49%
+Self-Consumption Rate (%),54.92%,34.10%
+Emissions (kg CO2e),"692,925.32","435,364.18"

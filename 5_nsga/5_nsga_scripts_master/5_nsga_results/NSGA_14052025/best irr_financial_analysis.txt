@@ -1,0 +1,64 @@
+===============================================
+Best IRR SOLUTION FINANCIAL ANALYSIS
+===============================================
+
+SYSTEM CONFIGURATION
+-------------------
+Existing PV Capacity: 10.00 kW
+Additional PV Capacity: 14.44 kW
+Total System PV Capacity: 24.44 kW
+Battery Size: 0.48 kWh
+Battery Power: 0.24 kW (0.5C rate)
+
+PV ALLOCATION
+------------
+Existing System: 10.00 kW
+accommodation_block: 14.44 kW
+  Tilt: 20.0°, Azimuth: 40.0°, Shading: 0.0%
+
+FINANCIAL RESULTS
+-----------------
+PV Capital Cost: $14,696.12
+Battery Capital Cost: $556.30
+Total Capital Cost: $15,252.42
+Annual PV Maintenance: $250.00 (with 3.0% annual inflation)
+IRR: 15.85%
+NPV: $19,129.60
+Simple Payback: 7.55 years
+Levelized Cost of Energy (LCOE): $0.02445/kWh
+
+ENERGY RESULTS (30 YEARS)
+-----------------------
+Total Generation: 797,811.64 kWh
+Total Demand: 1,316,358.47 kWh
+PV Self-Consumed: 435,588.19 kWh
+Battery Discharge: 4,245.04 kWh
+Grid Import: 877,120.65 kWh
+PV Export: 357,486.44 kWh
+Renewable Fraction: 33.41%
+Self-Consumption Rate: 54.92%
+Grid Emissions: 692,925.32 kg CO2e
+
+BATTERY PERFORMANCE
+------------------
+Cycles Over 30 Years: 9,747.48
+Final Capacity Degradation: 25.28%
+
+INCREMENTAL ANALYSIS VS. PV-ONLY
+------------------------------
+Current Annual Cost (PV-only): $8,246.44
+First Year Annual Cost (Proposed): $6,227.35
+First Year Savings: $2,019.09
+Total 30-Year Savings (undiscounted): $96,059.26
+
+NOTES
+-----
+- Incremental analysis compares against existing PV-only baseline
+- Electricity prices escalate at 3% per year
+- Initial electricity rates: Peak = $0.39710/kWh, Off-peak = $0.13530/kWh, Export = $0.03300/kWh
+- PV cost calculated using formula: y = 1047.3 * e^(-0.002*x) with minimum $750/kW
+- Ground-mounted PV has 20% cost premium
+- Battery cost calculated using formula: y = 977.54 * e^(-0.004*x) with minimum $600/kWh
+- No battery maintenance costs as per requirements
+- PV maintenance cost: $250.00 per year with 3.0% annual inflation
+- Discount rate for NPV calculation: 7%

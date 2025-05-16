@@ -33,7 +33,7 @@ EXISTING_PV = {
     'system_capacity_kw': 10.0,
     'tilt': 10.0,
     'azimuth': 18.0,
-    'shading': 43.0,
+    'shading': 43.5,
     'array_type': 1  # Roof-mounted
 }
 
@@ -93,7 +93,16 @@ BATTERY_CONTROL = {
     'off_peak_min_soc': 0.05     # Same as regular MIN_SOC for basic mode
 }
 
-# Battery rebate scenarios (for sensitivity analysis)
+
+# Add to config.py
+BATTERY_CHARGING_CONTROL = {
+    'enabled': False,  # Set to True to enable charging time restrictions
+    'allowed_hours': {
+        'start_hour': 0,  # Start hour (24-hour format)
+        'end_hour': 24    # End hour (24-hour format)
+    }
+}
+
 BATTERY_REBATES = {
     'enabled': False,  # Set to True to enable rebates
     'fixed_amount': 0,  # Fixed rebate amount ($)

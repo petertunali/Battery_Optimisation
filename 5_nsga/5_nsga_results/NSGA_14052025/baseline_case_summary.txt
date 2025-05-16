@@ -1,0 +1,28 @@
+===========================================
+BASELINE CASE SUMMARY (Existing PV Only)
+===========================================
+
+SYSTEM CONFIGURATION
+-------------------
+Existing PV Capacity: 10.00 kW
+Battery Size: 0.00 kWh
+
+FINANCIAL RESULTS
+-----------------
+Annual Cost: $8,246.44/year
+30-Year Cost with Escalation: $247,393.20
+NPV: $0.00 (by definition for baseline case)
+IRR: 0.00% (by definition for baseline case)
+Levelized Cost of Energy (LCOE): $0.02087/kWh
+
+ENERGY RESULTS (30 YEARS)
+-----------------------
+Total Generation: 204,028.14 kWh
+Total Demand: 1,316,358.47 kWh
+PV Self-Consumed: 165,267.81 kWh
+Battery Discharge: 0.00 kWh
+Grid Import: 1,151,090.66 kWh
+PV Export: 38,602.80 kWh
+Renewable Fraction: 12.55%
+Self-Consumption Rate: 81.07%
+Grid Emissions: 909,361.62 kg CO2e

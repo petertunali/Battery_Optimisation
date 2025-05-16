@@ -1,0 +1,48 @@
+===============================================
+SENSITIVITY ANALYSIS GUIDE
+===============================================
+
+BASELINE PARAMETERS
+------------------
+battery_cost_formula: 977.54 * e^(-0.004*x) with $600/kWh minimum
+pv_cost_formula: 1047.3 * e^(-0.002*x) with $750/kW minimum
+electricity_escalation: 0.03
+discount_rate: 0.07
+battery_degradation: 0.01
+peak_rate: 0.3971
+offpeak_rate: 0.1353
+export_rate: 0.033
+
+SUGGESTED SENSITIVITY SCENARIOS
+------------------------------
+Base Case: Current model parameters
+
+Lower Battery Cost: Battery costs 20% lower
+  Parameters to change:
+  - battery_cost_formula: 782.03 * e^(-0.004*x) with $480/kWh minimum
+
+Higher Electricity Escalation: Electricity prices rising at 5% annually
+  Parameters to change:
+  - electricity_escalation: 0.05
+
+Higher Feed-in Tariff: Export rate increased to $0.06/kWh
+  Parameters to change:
+  - export_rate: 0.06
+
+HOW TO CONDUCT SENSITIVITY ANALYSIS
+---------------------------------
+1. Modify the appropriate parameters in your code
+2. Rerun the optimization with the new parameters
+3. Compare the results with the baseline case
+4. Focus on how the changes affect:
+   - Best IRR and NPV values
+   - Optimal battery size and PV capacity
+   - Shape of the Pareto front
+   - Financial viability thresholds
+
+KEY METRICS TO TRACK
+------------------
+- Best IRR: How much does it improve?
+- Best NPV: How much does it increase?
+- Optimal system sizes: Do they change significantly?
+- Threshold parameters: At what values do batteries become economically viable?

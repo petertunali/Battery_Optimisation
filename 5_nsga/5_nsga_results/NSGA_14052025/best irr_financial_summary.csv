@@ -1,0 +1,23 @@
+metric,value,unit,description
+total_pv_capacity,24.443657538363574,kW,Total PV system capacity (existing + additional)
+additional_pv_capacity,14.443657538363574,kW,Additional PV capacity beyond existing system
+battery_capacity,0.48388954670343987,kWh,Battery energy storage capacity
+total_demand,1316358.4711302347,kWh,Total electricity demand over 30 years
+total_pv_used,435588.1944858687,kWh,PV generation used directly to satisfy demand
+total_battery_discharge,4245.039266854866,kWh,Energy discharged from battery storage
+total_grid_import_peak,276711.21570790425,kWh,Grid electricity imported during peak periods
+total_grid_import_offpeak,600409.4380935801,kWh,Grid electricity imported during off-peak periods
+total_pv_export,357486.44486810674,kWh,Excess PV generation exported to grid
+total_grid_emissions,692925.3165031726,kg CO2e,CO2 emissions from grid electricity
+renewable_fraction,0.33412876765633576,fraction,Fraction of demand met by renewable sources
+grid_fraction,0.6658712323436642,fraction,Fraction of demand met by grid imports
+self_consumption_rate,0.5492398481442946,fraction,Fraction of PV generation consumed on-site
+pv_capex,14696.119836514881,$,Capital cost for additional PV capacity
+battery_capex,556.3034936806307,$,Capital cost for battery storage
+total_capex,15252.423330195512,$,Total capital expenditure
+annual_maintenance,250.0,$/year,Annual maintenance cost
+total_maintenance,7500.0,$,Total maintenance cost over 30 years
+npv,19160.251968343247,$,Net Present Value of investment
+irr,0.15861365718030057,fraction,Internal Rate of Return
+simple_payback,7.554091251525019,years,Simple payback period against PV-only baseline
+lcoe,0.02445380826022128,$/kWh,Levelized Cost of Energy

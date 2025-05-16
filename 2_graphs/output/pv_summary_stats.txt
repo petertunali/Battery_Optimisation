@@ -1,0 +1,7 @@
+=== PV Generation Summary Statistics ===
+
+Average difference in Jan & Feb: 0.14 kWh/day
+Average difference in Oct–Dec:  0.50 kWh/day
+
+Average percentage difference (Actual vs Simulated) for Jan, Feb, Oct, Nov, Dec: -1.41%
+Average absolute percentage difference for Jan, Feb, Oct, Nov, Dec: 3.58%

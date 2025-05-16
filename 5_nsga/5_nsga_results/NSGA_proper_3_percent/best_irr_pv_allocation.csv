@@ -1,0 +1,3 @@
+name,capacity_kw,tilt,azimuth,shading,array_type,cost_multiplier
+existing_system,10.0,10.0,18.0,43.0,1,1.0
+accommodation_block,11.405214196028421,20.0,40.0,0.0,1,1.0

@@ -1,0 +1,16 @@
+===============================================
+SENSITIVITY ANALYSIS GUIDE
+===============================================
+
+BASELINE PARAMETERS
+------------------
+battery_cost_formula: 977.54 * e^(-0.004*x) with $600/kWh minimum
+pv_cost_formula: 1047.3 * e^(-0.002*x) with $750/kW minimum
+electricity_escalation: 0.03
+discount_rate: 0.07
+battery_degradation: 0.01
+peak_rate: 0.3971
+offpeak_rate: 0.1353
+export_rate: 0.033
+
+

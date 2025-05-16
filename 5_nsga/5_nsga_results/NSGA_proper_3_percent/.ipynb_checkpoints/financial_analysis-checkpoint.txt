@@ -1,0 +1,63 @@
+===============================================
+BATTERY & PV OPTIMIZATION FINANCIAL ANALYSIS
+===============================================
+
+SYSTEM CONFIGURATION
+-------------------
+Existing PV Capacity: 10.00 kW
+Additional PV Capacity: 11.41 kW
+Total System PV Capacity: 21.41 kW
+Battery Size: 0.00 kWh
+Battery Power: 0.00 kW (0.5C rate)
+
+PV ALLOCATION
+------------
+Existing System: 10.00 kW
+accommodation_block: 11.41 kW
+  Tilt: 20.0°, Azimuth: 40.0°, Shading: 0.0%
+
+FINANCIAL RESULTS
+-----------------
+PV Capital Cost: $12,675.30
+Battery Capital Cost: $0.01
+Total Capital Cost: $12,675.31
+Annual PV Maintenance: $250.00
+IRR: 15.51%
+NPV: $15,612.23
+Simple Payback: 7.96 years
+
+ENERGY RESULTS (30 YEARS)
+-----------------------
+Total Generation: 672,900.24 kWh
+Total Demand: 1,316,358.47 kWh
+PV Self-Consumed: 396,004.15 kWh
+Battery Discharge: 0.08 kWh
+Grid Import: 920,354.24 kWh
+PV Export: 276,376.67 kWh
+Renewable Fraction: 30.08%
+Self-Consumption Rate: 58.90%
+Grid Emissions: 745,486.93 kg CO2e
+
+BATTERY PERFORMANCE
+------------------
+Cycles Over 30 Years: 9,235.72
+Final Capacity Degradation: 25.28%
+
+INCREMENTAL ANALYSIS VS. PV-ONLY
+------------------------------
+Current Annual Cost (PV-only): $8,246.44
+First Year Annual Cost (Proposed): $6,653.06
+First Year Savings: $1,593.38
+Total 30-Year Savings (undiscounted): $80,199.35
+
+NOTES
+-----
+- Incremental analysis compares against existing PV-only baseline
+- Electricity prices escalate at 3% per year
+- Initial electricity rates: Peak = $0.39710/kWh, Off-peak = $0.13530/kWh, Export = $0.03300/kWh
+- PV cost calculated using formula: y = 1047.3 * e^(-0.002*x) with minimum $750/kW
+- Ground-mounted PV has 20% cost premium
+- Battery cost calculated using formula: y = 977.54 * e^(-0.004*x) with minimum $600/kWh
+- No battery maintenance costs as per requirements
+- PV maintenance cost: $250 per year
+- Discount rate for NPV calculation: 7%
